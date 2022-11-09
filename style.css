@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --color-main: rgb(29, 29, 29);
+    --color-darker: rgb(15, 15, 15);
+    --color-lighter: rgb(78, 78, 78);
+    --color-white: rgb(255, 255, 255);
+    --color-purple: rgb(103, 31, 162);
+    --color-violet: rgb(127, 58, 183);
+    --color-pink: rgb(255, 113, 161);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-size: 21px;
+    color: var(--color-white);
+}
+
+html{
+    width: 100vw;
+    overflow-x: hidden;
+
+}
+
+body{
+    background-color: var(--color-main);
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--color-darker);
+}
+
+ul.navbar-links{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 60%;
+    text-align: center;
+}
+
+a.navbar-item{
+    padding: .5rem 0;
+}
+
+li{
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* HomePage Start */
+.homepage-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    row-gap: 1rem;
+}
+
+.bio-containor{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-pic-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;    
+}
+
+.profile-pic{
+    width: 60%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.nav-card{
+    text-align: center;
+    padding: .5rem;
+    border-radius: 8px;
+    background-color: var(--color-darker);
+    width: 90%;
+}
+
+/* HomePage End */
+
+/* CV Page Starts Here */
+
+.cv-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-main);
+    padding: 1rem 15%;
+}
+
+.cv-info{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-main);
+    padding: 1rem;
+    width: 100%;
+    gap: 2rem;
+}
+
+dl{
+    padding: 1rem;
+    background-color: var(--color-darker);
+    border-radius: 24px;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+/* CV Page Ends Here */
+
+/* Projects Page Start Here */
+.projects-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.projects-title{
+    padding: 2rem;
+}
+.projects-article-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 80%;
+}
+.projects-article{
+    padding: .5rem;
+    text-align: center;
+    background-color: var(--color-darker);
+    border-radius: 16px;
+    width: 70%;
+}
+.projects-article h2, p{
+    padding: .5rem;
+}
+
+
+/* Projects Page Ends Here */
+
+.text-effect{
+    animation: text-animation 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--color-purple),
+        var(--color-violet),
+        var(--color-pink),
+        var(--color-purple)
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes text-animation {
+    from{
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200%;
+    }
+}
+
+@media screen and (min-width: 720px){
+    nav{
+        flex-direction: row;
+        flex: 1;
+    }
+    ul.navbar-links{
+        flex-direction: row;
+        width: 65%;
+        justify-content: center;
+    }
+    a.navbar-item{
+        flex: 1;
+    }
+    .homepage-container{
+        align-items: center;
+    }
+    .bio-containor{
+        align-items: center;
+        padding: 0 25%;
+    }
+    .cards-container{
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .profile-pic-container{
+        width: 85%;
+    }
+    .cards-container{
+        width: 50%;
+    }
+    .nav-card{
+        width: 50%;
+    }
+
+}
