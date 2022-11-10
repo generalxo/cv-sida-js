@@ -173,6 +173,49 @@ dl{
 .projects-article h2, p{
     padding: .5rem;
 }
+.nonprogramming-projects-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: hidden;
+    width: 90%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.slideshow-container{
+    width: 40%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-wrapper {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    position: relative;
+    animation: slideshow 20s infinite;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+}
+.slide-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.slideshow-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: .5rem;
+    width: 60%;
+}
 
 
 /* Projects Page Ends Here */
@@ -201,6 +244,22 @@ dl{
     }
 }
 
+@keyframes slideshow {
+    0% { left: 0; }
+    10% { left: 0; }
+    15% { left: -100%; }
+    25% { left: -100%; }
+    30% { left: -200%; }
+    40% { left: -200%; }
+    45% { left: -300%; }
+    55% { left: -300%; }
+    60% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -100%; }
+    85% { left: -100%; }
+    90% { left: 0%; }
+}
+
 @media screen and (min-width: 720px){
     nav{
         flex-direction: row;
@@ -213,6 +272,7 @@ dl{
     }
     a.navbar-item{
         flex: 1;
+        padding: 1rem 0;
     }
     .homepage-container{
         align-items: center;
@@ -233,6 +293,9 @@ dl{
     }
     .nav-card{
         width: 50%;
+    }
+    .nonprogramming-projects-container{
+        width: 60%;
     }
 
 }
