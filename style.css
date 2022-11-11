@@ -155,6 +155,7 @@ header > p{
 }
 .nonprogramming-projects-container{
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     overflow-y: hidden;
@@ -164,7 +165,7 @@ header > p{
     padding-bottom: 2rem;
 }
 .slideshow-container{
-    width: 40%;
+    width: 100%;
     height: auto;
     position: relative;
     overflow: hidden;
@@ -194,7 +195,7 @@ header > p{
     justify-content: center;
     text-align: center;
     padding-left: .5rem;
-    width: 60%;
+    width: 100%;
 }
 
 @keyframes slideshow {
@@ -301,8 +302,12 @@ dl{
     .nav-card{
         width: 50%;
     }
+    .slideshow-container{
+        flex-direction: column;
+    }
     .nonprogramming-projects-container{
-        width: 60%;
+        flex-direction: column;
+        width: 30%;
     }
 }
 /* Mediaquerry End */
