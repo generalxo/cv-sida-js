@@ -3,7 +3,7 @@
 :root{
     --color-main: rgb(29, 29, 29);
     --color-darker: rgb(15, 15, 15);
-    --color-lighter: rgb(78, 78, 78);
+    --color-lighter: rgb(51, 51, 51);
     --color-white: rgb(255, 255, 255);
     --color-purple: rgb(103, 31, 162);
     --color-violet: rgb(127, 58, 183);
@@ -20,28 +20,22 @@
     color: var(--color-white);
 }
 
-html{
-    width: 100vw;
-    overflow-x: hidden;
-
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.75rem;
 }
 
 body{
+    width: 100vw;
     background-color: var(--color-main);
 }
 
-h1{
-    font-size: 2.5rem;
-}
-
-h2{
-    font-size: 1.5rem;
-}
-
+/* Navbar Start */
 nav{
     display: flex;
     justify-content: center;
-    width: 100%;
     background-color: var(--color-darker);
 }
 
@@ -49,46 +43,71 @@ ul.navbar-links{
     display: flex;
     flex-direction: column;
     list-style: none;
-    width: 60%;
     text-align: center;
 }
 
-a.navbar-item{
-    padding: .5rem 0;
+li.navbar-item{
+    padding: .25rem;
 }
 
-li{
+li.navbar-item > a{
+    padding: .2rem;
+    font-weight: 600;
+}
+/* Navbar End */
+
+/* Header Start */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-main);
+}
+.header-title{
+    padding: 1rem;
+    padding-bottom: .5rem;
+}
+
+header > p{
     font-size: 1.2rem;
-    font-weight: 800;
+    padding-bottom: .5rem;
 }
+/* Header Start */
 
-/* HomePage Start */
+/* Homepage Start */
 .homepage-container{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 1rem;
-    row-gap: 1rem;
+
 }
 
 .bio-containor{
     display: flex;
     flex-direction: column;
-    text-align: center;
-    width: 100%;
+    padding-bottom: 1rem;
 }
 
 .profile-pic-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;    
+    width: 100%;
 }
 
 .profile-pic{
     width: 60%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 16px;
+}
+
+.bio-title{
+    padding-bottom: 1rem;
+}
+
+.bio-text{
+    padding-bottom: 1rem;
 }
 
 .cards-container{
@@ -105,46 +124,7 @@ li{
     background-color: var(--color-darker);
     width: 90%;
 }
-
-/* HomePage End */
-
-/* CV Page Starts Here */
-
-.cv-container{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-main);
-    padding: 1rem 15%;
-}
-
-.cv-info{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-main);
-    padding: 1rem;
-    width: 100%;
-    gap: 2rem;
-}
-
-dl{
-    padding: 1rem;
-    background-color: var(--color-darker);
-    border-radius: 24px;
-}
-
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1.5s;
-}
-
-.show{
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
-/* CV Page Ends Here */
+/* Homepage End */
 
 /* Projects Page Start Here */
 .projects-page-container{
@@ -217,9 +197,62 @@ dl{
     width: 60%;
 }
 
-
+@keyframes slideshow {
+    0% { left: 0; }
+    10% { left: 0; }
+    15% { left: -100%; }
+    25% { left: -100%; }
+    30% { left: -200%; }
+    40% { left: -200%; }
+    45% { left: -300%; }
+    55% { left: -300%; }
+    60% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -100%; }
+    85% { left: -100%; }
+    90% { left: 0%; }
+}
 /* Projects Page Ends Here */
 
+/* CV Page Starts Here */
+
+.cv-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-main);
+    padding: 1rem 15%;
+}
+
+.cv-info{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-main);
+    padding: 1rem;
+    width: 100%;
+    gap: 2rem;
+}
+
+dl{
+    padding: 1rem;
+    background-color: var(--color-darker);
+    border-radius: 24px;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+/* CV Page Ends Here */
+
+/* Text Effect Start */
 .text-effect{
     animation: text-animation 3s linear infinite;
     background: linear-gradient(
@@ -243,53 +276,27 @@ dl{
         background-position: -200%;
     }
 }
+/* Text Effect End */
 
-@keyframes slideshow {
-    0% { left: 0; }
-    10% { left: 0; }
-    15% { left: -100%; }
-    25% { left: -100%; }
-    30% { left: -200%; }
-    40% { left: -200%; }
-    45% { left: -300%; }
-    55% { left: -300%; }
-    60% { left: -200%; }
-    70% { left: -200%; }
-    75% { left: -100%; }
-    85% { left: -100%; }
-    90% { left: 0%; }
-}
-
+/* Mediaquerry Start */
 @media screen and (min-width: 720px){
-    nav{
-        flex-direction: row;
-        flex: 1;
-    }
     ul.navbar-links{
         flex-direction: row;
-        width: 65%;
-        justify-content: center;
-    }
-    a.navbar-item{
-        flex: 1;
-        padding: 1rem 0;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        padding: .5rem;
     }
     .homepage-container{
-        align-items: center;
+        padding: 1rem 15%;
     }
-    .bio-containor{
-        align-items: center;
-        padding: 0 25%;
+
+    .profile-pic{
+        max-width: 30%;
     }
     .cards-container{
         flex-direction: row;
-        gap: 2rem;
-    }
-    .profile-pic-container{
-        width: 85%;
-    }
-    .cards-container{
-        width: 50%;
+        gap: 3rem;
     }
     .nav-card{
         width: 50%;
@@ -297,5 +304,5 @@ dl{
     .nonprogramming-projects-container{
         width: 60%;
     }
-
 }
+/* Mediaquerry End */
